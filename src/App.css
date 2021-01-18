@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
 body a {
   text-decoration: none;
   color: #ffffff;
@@ -142,8 +146,7 @@ footer {
   height: 50vh;
   width: 80%;
   margin: auto;
-}
-
-.spinner-div img {
-  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
