@@ -14,7 +14,7 @@ const Series = () => {
     )
       .then((res) => res.json())
       .then((data) => {
-        console.log(data.entries);
+        // console.log(data.entries);
         setDatas(data.entries);
         setLoading(false);
       });
@@ -28,7 +28,12 @@ const Series = () => {
       ) : (
         <main className="item-main">
           {datas
-            .filter((items) => items.programType === "series")
+            .slice(0, 22)
+            .sort((a, b) => a.releaseYear - b.releaseYear)
+            .filter(
+              (items) =>
+                items.programType === "series" && items.releaseYear >= 2010
+            )
             .map((series, index) => (
               <div className="item-series" key={index}>
                 <img
@@ -37,6 +42,7 @@ const Series = () => {
                   alt=" "
                 />
                 <p>{series.title}</p>
+                <p>{series.releaseYear}</p>
               </div>
             ))}
         </main>
